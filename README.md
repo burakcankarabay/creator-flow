@@ -1,5 +1,18 @@
 <div align="center">
 
+# ⚡ SparkGrid
+
+**Modern Content & Multi-Channel SaaS Production Suite**
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-SparkGrid_Studio-indigo?style=for-the-badge&logo=render&logoColor=white)](https://SENIN-CANLI-LINKIN.onrender.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+</div>
+
+---
+
+<div align="center">
+
 # 🎬 Studio — SaaS Production Suite
 
 **Full-Stack Multi-Channel Short-Form Video Production & Analytics Platform**  
