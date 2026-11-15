@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const PRICING_TEXTS = {
   tr: {
-    badge: "CREATORFLOW PRO STÜDYO",
+    badge: " PRO STÜDYO",
     title: "İçerik Üretiminizi Sınırsız Hale Getirin",
     subtitle:
       "Çoklu kanal yönetimi, sınırsız video fikri ve çapraz platform analizleriyle kanallarınızı büyütün.",
@@ -40,7 +40,7 @@ const PRICING_TEXTS = {
     ],
   },
   en: {
-    badge: "CREATORFLOW PRO STUDIO",
+    badge: " PRO STUDIO",
     title: "Scale Your Short-Form Production",
     subtitle:
       "Unlock unlimited channels, video ideas, and cross-platform analytics to grow faster.",
@@ -75,7 +75,7 @@ const PRICING_TEXTS = {
     ],
   },
   es: {
-    badge: "ESTUDIO CREATORFLOW PRO",
+    badge: "ESTUDIO  PRO",
     title: "Lleva tu Producción al Siguiente Nivel",
     subtitle:
       "Desbloquea canales ilimitados, ideas de video y analítica multiplataforma.",
@@ -110,7 +110,7 @@ const PRICING_TEXTS = {
     ],
   },
   fr: {
-    badge: "STUDIO CREATORFLOW PRO",
+    badge: "STUDIO  PRO",
     title: "Passez votre Production au Niveau Supérieur",
     subtitle:
       "Débloquez des chaînes illimitées, des idées de vidéos et des analyses complètes.",
@@ -145,7 +145,7 @@ const PRICING_TEXTS = {
     ],
   },
   de: {
-    badge: "CREATORFLOW PRO STUDIO",
+    badge: " PRO STUDIO",
     title: "Unbegrenzte Kurzvideo-Produktion",
     subtitle:
       "Schalten Sie unbegrenzte Kanäle, Video-Ideen und plattformübergreifende Analysen frei.",

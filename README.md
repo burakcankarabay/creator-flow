@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 CreatorFlow Studio — SaaS Production Suite
+# 🎬 Studio — SaaS Production Suite
 
 **Full-Stack Multi-Channel Short-Form Video Production & Analytics Platform**  
 _Built for YouTube Shorts, Instagram Reels & TikTok Creators_
@@ -22,7 +22,7 @@ _Built for YouTube Shorts, Instagram Reels & TikTok Creators_
 
 ### 🚀 Overview
 
-**CreatorFlow** is a full-stack MERN SaaS web application designed for short-form content creators managing multiple channels across **YouTube Shorts, Instagram Reels, and TikTok**. It streamlines the entire content lifecycle—from viral hook ideation and visual scripting to drag-and-drop scheduling and cross-platform performance analytics.
+\***\* is a full-stack MERN SaaS web application designed for short-form content creators managing multiple channels across **YouTube Shorts, Instagram Reels, and TikTok\*\*. It streamlines the entire content lifecycle—from viral hook ideation and visual scripting to drag-and-drop scheduling and cross-platform performance analytics.
 
 ### ✨ Key Features
 
@@ -50,7 +50,7 @@ _Built for YouTube Shorts, Instagram Reels & TikTok Creators_
 
 ### 🚀 Proje Hakkında
 
-**CreatorFlow**, **YouTube Shorts, Instagram Reels ve TikTok** için çoklu kanal yöneten içerik üreticileri adına geliştirilmiş uçtan uca (Full-Stack) bir **MERN SaaS** üretim stüdyosudur. Fikir aşamasından viral kanca (hook) yazımına, haftalık yayın takviminden çapraz platform izlenme analizlerine kadar tüm iş akışını tek bir karanlık mod (dark mode) arayüzünde toplar.
+\***\*, **YouTube Shorts, Instagram Reels ve TikTok** için çoklu kanal yöneten içerik üreticileri adına geliştirilmiş uçtan uca (Full-Stack) bir **MERN SaaS\*\* üretim stüdyosudur. Fikir aşamasından viral kanca (hook) yazımına, haftalık yayın takviminden çapraz platform izlenme analizlerine kadar tüm iş akışını tek bir karanlık mod (dark mode) arayüzünde toplar.
 
 ### ✨ Öne Çıkan Özellikler
 
@@ -83,9 +83,9 @@ _Built for YouTube Shorts, Instagram Reels & TikTok Creators_
 
 ### 💻 Yerel Kurulum (Local Development Setup)
 
-**1. Backend Kurulumu (`creator-flow-api`):**
+**1. Backend Kurulumu (`SparkGrid-api`):**
 
 ```bash
-cd creator-flow-api
+cd SparkGrid-api
 npm install
 ```

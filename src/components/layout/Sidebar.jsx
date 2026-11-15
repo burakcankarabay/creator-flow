@@ -100,7 +100,6 @@ export default function Sidebar() {
           </div>
           <div>
             <h1 className="text-base font-bold tracking-tight text-white flex items-center gap-1.5">
-              CreatorFlow
               <button
                 onClick={() => setIsPricingModalOpen(true)}
                 className={`text-[10px] font-semibold px-1.5 py-0.5 rounded border cursor-pointer transition-colors ${

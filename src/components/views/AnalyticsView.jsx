@@ -216,7 +216,7 @@ export default function AnalyticsView() {
     const todayStr = new Date().toISOString().slice(0, 10);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", `creatorflow-analytics-${todayStr}.csv`);
+    link.setAttribute("download", `-analytics-${todayStr}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

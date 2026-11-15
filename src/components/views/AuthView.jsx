@@ -159,7 +159,6 @@ export default function AuthView() {
             <Video className="w-6 h-6 text-white" />
           </div>
           <h1 className="text-xl font-bold text-white flex items-center gap-2">
-            CreatorFlow
             <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
               PRO
             </span>
@@ -275,7 +274,7 @@ export default function AuthView() {
       </div>
 
       <div className="text-center text-[11px] text-slate-500">
-        CreatorFlow SaaS © 2026 • Shorts, Reels & TikTok Production Suite
+        SaaS © 2026 • Shorts, Reels & TikTok Production Suite
       </div>
     </div>
   );
