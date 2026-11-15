@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   X,
   Trash2,
@@ -7,6 +7,8 @@ import {
   Loader2,
   CheckCircle2,
   AlertCircle,
+  Copy,
+  Check,
 } from "lucide-react";
 import { useCreator, COLUMNS } from "../../context/CreatorContext";
 
@@ -14,6 +16,7 @@ export default function ContentDrawer() {
   const { selectedVideo, setSelectedVideoId, dispatch, saveStatus, t } =
     useCreator();
 
+  const [copiedField, setCopiedField] = useState(null);
   const debounceTimerRef = useRef(null);
   const pendingUpdatesRef = useRef({});
 
@@ -38,6 +41,13 @@ export default function ContentDrawer() {
   }, [selectedVideo?.id]);
 
   if (!selectedVideo) return null;
+
+  const handleCopy = (text, fieldName) => {
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+    setCopiedField(fieldName);
+    setTimeout(() => setCopiedField(null), 2000);
+  };
 
   const handleDebouncedUpdate = (updates) => {
     const payload = { id: selectedVideo.id, ...updates };
@@ -194,10 +204,31 @@ export default function ContentDrawer() {
             </div>
           </div>
 
+          {/* HOOK ALANI + KOPYALA BUTONU */}
           <div>
-            <label className="flex items-center gap-1.5 text-xs font-medium text-amber-400 mb-1.5">
-              <Sparkles className="w-3.5 h-3.5" /> {t("hookLabel")}
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="flex items-center gap-1.5 text-xs font-medium text-amber-400">
+                <Sparkles className="w-3.5 h-3.5" /> {t("hookLabel")}
+              </label>
+              <button
+                type="button"
+                onClick={() => handleCopy(selectedVideo.hookText, "hook")}
+                disabled={!selectedVideo.hookText}
+                className="flex items-center gap-1 px-2 py-1 text-[11px] font-medium rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+              >
+                {copiedField === "hook" ? (
+                  <>
+                    <Check className="w-3 h-3 text-emerald-400" />
+                    <span className="text-emerald-400">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3 h-3" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
             <textarea
               rows={2}
               value={selectedVideo.hookText}
@@ -207,10 +238,31 @@ export default function ContentDrawer() {
             />
           </div>
 
+          {/* SCRIPT / PROMPT ALANI + KOPYALA BUTONU */}
           <div>
-            <label className="block text-xs font-medium text-slate-400 mb-1.5">
-              {t("scriptLabel")}
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="block text-xs font-medium text-slate-400">
+                {t("scriptLabel")}
+              </label>
+              <button
+                type="button"
+                onClick={() => handleCopy(selectedVideo.scriptNotes, "script")}
+                disabled={!selectedVideo.scriptNotes}
+                className="flex items-center gap-1 px-2 py-1 text-[11px] font-medium rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+              >
+                {copiedField === "script" ? (
+                  <>
+                    <Check className="w-3 h-3 text-emerald-400" />
+                    <span className="text-emerald-400">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3 h-3" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
             <textarea
               rows={6}
               value={selectedVideo.scriptNotes}
