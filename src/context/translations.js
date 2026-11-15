@@ -72,6 +72,8 @@ export const TRANSLATIONS = {
     todayBtn: "Bu Hafta",
     noVideoDay: "Planlı video yok",
     clearDate: "Tarihi Kaldır",
+    copy: "Kopyala",
+    copied: "Kopyalandı!",
   },
   en: {
     subtitle: "Shorts & Reels Studio",
@@ -138,6 +140,8 @@ export const TRANSLATIONS = {
     todayBtn: "This Week",
     noVideoDay: "No videos scheduled",
     clearDate: "Unschedule",
+    copy: "Copy",
+    copied: "Copied!",
   },
   es: {
     subtitle: "Estudio de Shorts y Reels",

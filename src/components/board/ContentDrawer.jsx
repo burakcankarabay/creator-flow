@@ -339,6 +339,73 @@ export default function ContentDrawer() {
             {t("done")}
           </button>
         </div>
+        {/* HOOK ALANI + ÇOKLU DİL DESTEKLİ KOPYALA BUTONU */}
+        <div>
+          <div className="flex items-center justify-between mb-1.5">
+            <label className="flex items-center gap-1.5 text-xs font-medium text-amber-400">
+              <Sparkles className="w-3.5 h-3.5" /> {t("hookLabel")}
+            </label>
+            <button
+              type="button"
+              onClick={() => handleCopy(selectedVideo.hookText, "hook")}
+              disabled={!selectedVideo.hookText}
+              className="flex items-center gap-1 px-2 py-1 text-[11px] font-medium rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+            >
+              {copiedField === "hook" ? (
+                <>
+                  <Check className="w-3 h-3 text-emerald-400" />
+                  <span className="text-emerald-400">{t("copied")}</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3 h-3" />
+                  <span>{t("copy")}</span>
+                </>
+              )}
+            </button>
+          </div>
+          <textarea
+            rows={2}
+            value={selectedVideo.hookText}
+            onChange={(e) => handleFieldChange("hookText", e.target.value)}
+            placeholder={t("hookPlaceholder")}
+            className="w-full bg-[#0F1115] border border-slate-800 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-indigo-500"
+          />
+        </div>
+
+        {/* SCRIPT / PROMPT ALANI + ÇOKLU DİL DESTEKLİ KOPYALA BUTONU */}
+        <div>
+          <div className="flex items-center justify-between mb-1.5">
+            <label className="block text-xs font-medium text-slate-400">
+              {t("scriptLabel")}
+            </label>
+            <button
+              type="button"
+              onClick={() => handleCopy(selectedVideo.scriptNotes, "script")}
+              disabled={!selectedVideo.scriptNotes}
+              className="flex items-center gap-1 px-2 py-1 text-[11px] font-medium rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+            >
+              {copiedField === "script" ? (
+                <>
+                  <Check className="w-3 h-3 text-emerald-400" />
+                  <span className="text-emerald-400">{t("copied")}</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3 h-3" />
+                  <span>{t("copy")}</span>
+                </>
+              )}
+            </button>
+          </div>
+          <textarea
+            rows={6}
+            value={selectedVideo.scriptNotes}
+            onChange={(e) => handleFieldChange("scriptNotes", e.target.value)}
+            placeholder={t("scriptPlaceholder")}
+            className="w-full bg-[#0F1115] border border-slate-800 rounded-xl p-3 text-xs text-slate-200 leading-relaxed focus:outline-none focus:border-indigo-500"
+          />
+        </div>
       </div>
     </div>
   );
