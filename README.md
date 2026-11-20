@@ -1,6 +1,6 @@
 # ⚡ SparkGrid — Content Creator Workflow & Production SaaS
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-https://spark-grid-kzqt.onrender.com/board-6366f1?style=for-the-badge)](https://spark-grid-kzqt.onrender.com/board)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-SparkGrid-4f46e5?style=for-the-badge&logo=render&logoColor=white)](https://spark-grid-kzqt.onrender.com)
 [![Backend API](<https://img.shields.io/badge/⚙️_API_Status-Online_(24/7)-10b981?style=for-the-badge>)](https://creator-flow-api.onrender.com/api/health)
 [![Tech Stack](https://img.shields.io/badge/Stack-MERN_%2B_Vite-0f172a?style=for-the-badge&logo=react)](#)
 
