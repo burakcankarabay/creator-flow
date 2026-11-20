@@ -1,6 +1,7 @@
 import { X, Check, Crown, Sparkles, Zap, ShieldCheck } from "lucide-react";
 import { useCreator } from "../../context/CreatorContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { initializePaddle } from "@paddle/paddle-js";
 
 const PRICING_TEXTS = {
   tr: {
@@ -191,6 +192,29 @@ export default function PricingModal() {
   } = useCreator();
   const [billingCycle, setBillingCycle] = useState("yearly"); // 'monthly' | 'yearly'
   const [loading, setLoading] = useState(false);
+  const [paddle, setPaddle] = useState(null);
+
+  useEffect(() => {
+    const token = import.meta.env.VITE_PADDLE_CLIENT_TOKEN;
+    if (!token) return;
+
+    initializePaddle({
+      environment: "sandbox", // Canlıya geçerken "production" yapacaksın
+      token,
+      eventCallback: (event) => {
+        if (event.name === "checkout.completed") {
+          setIsPricingModalOpen(false);
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        }
+      },
+    }).then((paddleInstance) => {
+      if (paddleInstance) {
+        setPaddle(paddleInstance);
+      }
+    });
+  }, [setIsPricingModalOpen]);
 
   if (!isPricingModalOpen) return null;
 
@@ -206,6 +230,44 @@ export default function PricingModal() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleUpgrade = () => {
+    if (!paddle) {
+      alert("Ödeme sistemi henüz yüklenmedi, lütfen tekrar deneyin.");
+      return;
+    }
+
+    const priceId =
+      billingCycle === "yearly"
+        ? import.meta.env.VITE_PADDLE_YEARLY_PRICE_ID
+        : import.meta.env.VITE_PADDLE_MONTHLY_PRICE_ID;
+
+    if (!priceId) {
+      alert(
+        "Fiyat bilgisi bulunamadı. Lütfen ortam değişkenlerini kontrol edin.",
+      );
+      return;
+    }
+
+    setLoading(true);
+
+    paddle.Checkout.open({
+      items: [{ priceId, quantity: 1 }],
+      customer: {
+        email: user?.email,
+      },
+      customData: {
+        userId: user?._id || user?.id,
+      },
+      settings: {
+        displayMode: "overlay",
+        theme: "dark",
+        locale: "en",
+      },
+    });
+
+    setLoading(false);
   };
 
   return (
@@ -352,7 +414,7 @@ export default function PricingModal() {
               </button>
             ) : (
               <button
-                onClick={() => handlePlanChange("pro")}
+                onClick={handleUpgrade}
                 disabled={loading}
                 className="w-full flex items-center justify-center gap-1.5 py-3 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition-all cursor-pointer"
               >
