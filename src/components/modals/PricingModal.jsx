@@ -196,12 +196,26 @@ export default function PricingModal() {
 
   useEffect(() => {
     const token = import.meta.env.VITE_PADDLE_CLIENT_TOKEN;
+    console.log(
+      "1. Paddle Token durumu:",
+      token ? `Var (${token.slice(0, 8)}...)` : "UNDEFINED (YOK!)",
+    );
+    console.log(
+      "2. Monthly Price ID:",
+      import.meta.env.VITE_PADDLE_MONTHLY_PRICE_ID,
+    );
+    console.log(
+      "3. Yearly Price ID:",
+      import.meta.env.VITE_PADDLE_YEARLY_PRICE_ID,
+    );
+
     if (!token) return;
 
     initializePaddle({
-      environment: "sandbox", // Canlıya geçerken "production" yapacaksın
+      environment: "sandbox",
       token,
       eventCallback: (event) => {
+        console.log("Paddle Event:", event);
         if (event.name === "checkout.completed") {
           setIsPricingModalOpen(false);
           setTimeout(() => {
@@ -209,11 +223,16 @@ export default function PricingModal() {
           }, 2000);
         }
       },
-    }).then((paddleInstance) => {
-      if (paddleInstance) {
-        setPaddle(paddleInstance);
-      }
-    });
+    })
+      .then((paddleInstance) => {
+        console.log("4. Paddle başlatıldı:", paddleInstance);
+        if (paddleInstance) {
+          setPaddle(paddleInstance);
+        }
+      })
+      .catch((err) => {
+        console.error("Paddle başlatma hatası:", err);
+      });
   }, [setIsPricingModalOpen]);
 
   if (!isPricingModalOpen) return null;
