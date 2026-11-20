@@ -6,7 +6,7 @@
 
 **SparkGrid**, kısa form video içerik üreticilerinin (YouTube Shorts, Instagram Reels, TikTok) fikir aşamasından senaryo yazımına, yayın takviminden çapraz platform izlenme analizlerine kadar tüm üretim süreçlerini tek bir merkezden yönetebildiği Full-Stack bir SaaS uygulamasıdır.
 
-🔗 **Canlı Uygulama (Live Demo):** [https://sparkgrid.onrender.com](https://sparkgrid.onrender.com)
+🔗 **Canlı Uygulama (Live Demo):** [https://spark-grid-kzqt.onrender.com/board](https://spark-grid-kzqt.onrender.com/board)
 
 ---
 
