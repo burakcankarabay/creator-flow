@@ -11,6 +11,8 @@ import {
   Globe,
   Trash2,
   Lock,
+  Check,
+  X,
 } from "lucide-react";
 import { useCreator } from "../../context/CreatorContext";
 
@@ -111,6 +113,7 @@ export default function Sidebar() {
                 {isPro ? "PRO" : "FREE"}
               </button>
             </h1>
+            <h1>SparkGrid</h1>
             <p className="text-xs text-slate-400">{t("subtitle")}</p>
           </div>
         </div>
@@ -163,15 +166,42 @@ export default function Sidebar() {
           </div>
 
           {isAddingChannel && (
-            <form onSubmit={handleCreateChannel} className="mb-3 px-1">
+            <form
+              onSubmit={handleCreateChannel}
+              className="mb-3 px-1 flex items-center gap-1.5"
+            >
               <input
                 type="text"
                 placeholder={t("channelPlaceholder")}
                 value={newChannelName}
                 onChange={(e) => setNewChannelName(e.target.value)}
-                className="w-full bg-[#0F1115] border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") {
+                    setNewChannelName("");
+                    setIsAddingChannel(false);
+                  }
+                }}
+                className="flex-1 min-w-0 bg-[#0F1115] border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
                 autoFocus
               />
+              <button
+                type="submit"
+                disabled={!newChannelName.trim()}
+                title={t("add")}
+                className="p-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed text-white transition-colors shrink-0 cursor-pointer"
+              >
+                <Check className="w-3.5 h-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setNewChannelName("");
+                  setIsAddingChannel(false);
+                }}
+                className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors shrink-0 cursor-pointer"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
             </form>
           )}
 
