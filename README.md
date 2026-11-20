@@ -1,5 +1,12 @@
 # ⚡ SparkGrid — Content Creator Workflow & Production SaaS
 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-SparkGrid-4f46e5?style=for-the-badge&logo=render&logoColor=white)](https://spark-grid-kzqt.onrender.com)
 [![Backend API](<https://img.shields.io/badge/⚙️_API_Status-Online_(24/7)-10b981?style=for-the-badge>)](https://creator-flow-api.onrender.com/api/health)
 [![Tech Stack](https://img.shields.io/badge/Stack-MERN_%2B_Vite-0f172a?style=for-the-badge&logo=react)](#)
